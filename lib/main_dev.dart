@@ -4,6 +4,7 @@ import 'package:blabla/data/repositories/ride/ride_repository.dart';
 import 'package:blabla/data/repositories/ride/ride_repository_mock.dart';
 import 'package:blabla/data/repositories/ride_preference/ride_preference_repository.dart';
 import 'package:blabla/data/repositories/ride_preference/ride_preference_repository_mock.dart';
+import 'package:blabla/ui/states/ride_preferences_state.dart';
 import 'package:provider/provider.dart';
 import 'main_common.dart';
 
@@ -12,10 +13,12 @@ List<InheritedProvider> get devProviders {
   return [
     // 1 - Inject the song repository
     Provider<LocationRepository>(create: (_) => LocationRepositoryMock()),
-    Provider<RidePreferenceRepository>(
-      create: (_) => RidePreferenceRepositoryMock(),
-    ),
+    Provider<RidePreferenceRepository>(create: (_) => RidePreferenceRepositoryMock(), ),
     Provider<RideRepository>(create: (_) => RideRepositoryMock()),
+
+     ChangeNotifierProvider<RidePreferencesState>(
+      create: (_) =>RidePreferencesState(repository: RidePreferenceRepositoryMock())
+    ),
   ];
 }
 

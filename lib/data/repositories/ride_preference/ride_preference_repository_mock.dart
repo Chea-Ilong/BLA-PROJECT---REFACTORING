@@ -8,4 +8,8 @@ class RidePreferenceRepositoryMock implements RidePreferenceRepository {
     return fakeRidePrefs;
   }
 
+  @override
+  void addPreferenceToHistory(RidePreference preference) {
+    fakeRidePrefs.add(preference);
+  }
 }
