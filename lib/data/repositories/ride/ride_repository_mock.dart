@@ -8,15 +8,5 @@ class RideRepositoryMock implements RideRepository {
   List<Ride> fetchRides() {
     return fakeRides;
   }
-   @override
-  List<Ride> getRidesFor(RidePreference preferences) {
-     return fetchRides()  
-        .where(
-          (ride) =>
-              ride.departureLocation == preferences.departure &&
-              ride.arrivalLocation == preferences.arrival &&
-              ride.availableSeats >= preferences.requestedSeats,
-        )
-        .toList();
-  }
+  
 }

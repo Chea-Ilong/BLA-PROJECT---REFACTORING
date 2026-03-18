@@ -1,5 +1,4 @@
 import 'package:blabla/model/ride_pref/ride_pref.dart';
-import 'package:blabla/ui/screens/home/home_screen.dart';
 import 'package:blabla/ui/screens/home/view_model/home_view_model.dart';
 import 'package:blabla/ui/screens/home/widgets/home_history_tile.dart';
 import 'package:blabla/ui/screens/rides_selection/rides_selection_screen.dart';
@@ -7,6 +6,8 @@ import 'package:blabla/ui/theme/theme.dart';
 import 'package:blabla/ui/widgets/pickers/bla_ride_preference_picker.dart';
 import 'package:blabla/utils/animations_util.dart';
 import 'package:flutter/material.dart';
+
+const String blablaHomeImagePath = 'assets/images/blabla_home.png';
 
 class HomeContent extends StatelessWidget {
   final HomeViewModel vm;
